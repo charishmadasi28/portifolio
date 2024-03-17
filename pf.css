@@ -18,12 +18,33 @@ body{
     background-position: center; /* Center the background */
     background-repeat: no-repeat;
 }
-nav{
+body::before{
+    content: "";
+    position: absolute;
+    inset: 40% -60% 0 -60%;
+    opacity: 0.3;
+    pointer-events: none;
+}
+/*nav{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 
+}*/
+nav{
+    position: relative;
+    z-index: 1;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+nav.before .active-element{
+    transform: rotate(180deg);
 }
 h1{
     margin-top: 0;
